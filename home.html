@@ -1,7 +1,7 @@
 <!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Shankar studios</title>
+  <title>suraj studios</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     * {
@@ -14,13 +14,19 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  
+}
+section{
+  margin:0;
+  padding:0;
+  line-height: 0;
 }
 .header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 125px;
+  height: 200px;
   background-color: #fff;
   display: flex;
   align-items: center;
@@ -30,7 +36,7 @@
   z-index: 1000;
 }
 .logo {
-  margin-top: 35px;
+  margin-top: 15px;
 }
 .nav-toggle {
   display: none;
@@ -55,14 +61,14 @@
   position: absolute;
   width: 0;
   height: 2px;
-  background-color: rgb(161, 23, 23);
+  background-color:#944547;
   bottom: 0;
   left: 0;
   transition: width 0.3s ease;
 }
 .nav a:hover,
 .nav a.active {
-  color: rgb(161, 23, 23);
+  color: #944547;
 }
 .nav a:hover::after,
 .nav a.active::after {
@@ -76,18 +82,19 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 150px;
+  margin-top: 80px;
   width: 100%;
-
 }
 .slider {
   width: 100%;
   max-width: 800px;
-  height: 500px;
+  height: 550px;
   overflow: hidden;
   border-radius: 10px;
   box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
   position: relative;
+  margin:0 auto;
+  
 }
 .slides {
   display: flex;
@@ -108,6 +115,7 @@
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
+  padding:10%;
 }
 .controls {
   position: absolute;
@@ -159,7 +167,29 @@
   width: 100%;
   margin-top: auto;
 }
+
+.svg-divider {
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  margin-top: 20px;
+  
+}
+.svg-divider img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.slider-wrapper,
+.svg-divider,
+.site-footer {
+  width: 100%;
+  display: block;
+}
 @media (max-width: 768px) {
+
+  
   .nav {
     display: none;
   }
@@ -170,7 +200,7 @@
     right: 20px;
     font-size: 24px;
     cursor: pointer;
-    color: rgb(161, 23, 23);
+    color:#944547;
   }
   .sidebar {
     display: flex;
@@ -198,7 +228,7 @@
   }
   .sidebar a:hover,
   .sidebar a.active {
-    background: rgb(161, 23, 23);
+    background: #944547;
     color: #fff;
   }
   .close-btn {
@@ -210,7 +240,7 @@
     color: rgb(161, 23, 23);
   }
   .slider {
-    height: 300px;
+    height: 400px;
   }
 
   .slide-item
@@ -239,21 +269,28 @@
   padding: 5px 5px;
   font-size: 0.9rem;
   width: 100%;
-
-   
+  margin-top: 0;
 }
 
 .slider-wrapper {
   flex: 1;
-  display: flex;
+ 
   justify-content: center;
   align-items: center;
-  margin:35px;
-  padding:35px;
-  position:relative;
+
+  padding:0px;
+ 
   
-  width: 90%;
+  width: 100%;
+
+
+    margin: 0 auto;
+    display: block;
+    margin-top:250px;
+    
+    
 }
+
 
 .controls {
   display:none;
@@ -265,12 +302,31 @@
   width: 100%;
   text-align: center;
 }
+
+
+  .svg-divider svg {
+    display: block;
+    
+ width:100%;
+    height: 300px;
+    margin-bottom:0;
+    padding:0;
+    
+    
+  }
+  custom-svg{
+   width:100%;
+height:50px;
+    display:block;
+    margin:0;
+    padding:0;
+  }
 }
   </style>
 </head>
 <body>
   <header class="header">
-    <img src="eventlogo.jpg" alt="Logo" class="logo" width="100" height="135">
+    <img src="eventlogo.png" alt="Logo" class="logo" width="100" height="135">
     <div class="nav-toggle" onclick="toggleSidebar()">&#9776;</div>
     <nav class="nav">
       <a href="home.html" class="active">Home</a>
@@ -303,9 +359,30 @@
   </div>
   <div class="indicators" id="indicators"></div>
 </div>
+
+<div class="svg-divider">
+ 
+  <svg class="custom-svg" xmlns="http://www.w3.org/2000/svg" width="100%" height="auto" viewBox="0 0 1440 687" fill="none" style="display:block">
+    <!-- Flip only the curve -->
+    <g transform="scale(1, -1)" transform-origin="center">
+      <path d="M0 0H1440V683.5C1440 683.5 1269 608.5 1080 650C891 691.5 708.5 658.5 625.5 639C542.5 619.5 420 625 266.5 661.5C113 698 0 683.5 0 683.5V0Z" fill="#944547"/>
+    </g>
+    <!-- Keep the image upright -->
+    
+    <image id="svgPhoto" x="15%" y="25%" width="1000" height="450" href="photo1.jpg" />
+    
+  </svg>
+</div>
   </div>  <footer class="site-footer">
-    <p>&copy; 2025 Shankar studios private limited. All rights reserved.</p>
-  </footer>  <script>
+    <p>&copy; 2025 suraj studios private limited. All rights reserved.</p>
+  </footer>  
+  
+  
+  
+  
+  <script>
+
+
     const slides = document.getElementById('slides');
     const slideCount = slides.children.length;
     const indicators = document.getElementById('indicators');
@@ -371,5 +448,16 @@
     function toggleSidebar() {
       document.getElementById('sidebar').classList.toggle('open');
     }
+  </script>
+  
+  <script>
+    document.addEventListener("DOMContentLoaded",function(){
+    const photos = ["photo1.jpg", "photo2.jpg", "photo3.jpg" , "photo4.jpg", "photo5.jpg"];
+    let index1 = 0;
+    const svgImage = document.getElementById("svgPhoto");
+    setInterval(() => {
+      index1 = (index1 + 1) % photos.length;
+      svgImage.setAttribute("href", photos[index1]);
+    }, 3000)}); 
   </script></body>
 </html>
