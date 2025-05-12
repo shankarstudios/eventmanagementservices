@@ -82,19 +82,18 @@ section{
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 80px;
+  margin-top: 150px;
   width: 100%;
 }
 .slider {
   width: 100%;
   max-width: 800px;
-  height: 550px;
+  height: 500px;
   overflow: hidden;
   border-radius: 10px;
   box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
   position: relative;
   margin:0 auto;
-  
 }
 .slides {
   display: flex;
@@ -115,7 +114,6 @@ section{
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
-  padding:10%;
 }
 .controls {
   position: absolute;
@@ -286,7 +284,7 @@ section{
 
     margin: 0 auto;
     display: block;
-    margin-top:250px;
+    margin-top:150px;
     
     
 }
@@ -326,7 +324,7 @@ height:50px;
 </head>
 <body>
   <header class="header">
-    <img src="eventlogo.png" alt="Logo" class="logo" width="100" height="135">
+    <img src="eventlogo.png" alt="Logo" class="logo" width="120" height="150">
     <div class="nav-toggle" onclick="toggleSidebar()">&#9776;</div>
     <nav class="nav">
       <a href="home.html" class="active">Home</a>
@@ -350,9 +348,8 @@ height:50px;
         <div class="slide-item">
           <img src="eventimage2.png" />
         </div>
-        <div class="slide-item">
-          <img src="eventimage3.png" />
-        </div>
+        
+        
       </div><div class="controls">
     <span id="prev">&#10094;</span>
     <span id="next">&#10095;</span>
@@ -361,16 +358,13 @@ height:50px;
 </div>
 
 <div class="svg-divider">
- 
-  <svg class="custom-svg" xmlns="http://www.w3.org/2000/svg" width="100%" height="auto" viewBox="0 0 1440 687" fill="none" style="display:block">
+  <svg id="customSVG" class="custom-svg" xmlns="http://www.w3.org/2000/svg" width="100%" height="auto" viewBox="0 0 1440 687" fill="none" style="display:block">
     <!-- Flip only the curve -->
-    <g transform="scale(1, -1)" transform-origin="center">
+    <g id="svgPathGroup" class="svgPathGroup" transform="scale(1, -1)" transform-origin="center" >
       <path d="M0 0H1440V683.5C1440 683.5 1269 608.5 1080 650C891 691.5 708.5 658.5 625.5 639C542.5 619.5 420 625 266.5 661.5C113 698 0 683.5 0 683.5V0Z" fill="#944547"/>
     </g>
     <!-- Keep the image upright -->
-    
-    <image id="svgPhoto" x="15%" y="25%" width="1000" height="450" href="photo1.jpg" />
-    
+    <image id="svgPhoto" x="15%" y="25%" width="1000" height="400" href="photo1.jpg" />
   </svg>
 </div>
   </div>  <footer class="site-footer">
@@ -452,12 +446,37 @@ height:50px;
   
   <script>
     document.addEventListener("DOMContentLoaded",function(){
-    const photos = ["photo1.jpg", "photo2.jpg", "photo3.jpg" , "photo4.jpg", "photo5.jpg"];
+    const photos = ["photo1.jpg", "photo2.jpg", "photo3.jpg"];
     let index1 = 0;
     const svgImage = document.getElementById("svgPhoto");
     setInterval(() => {
       index1 = (index1 + 1) % photos.length;
       svgImage.setAttribute("href", photos[index1]);
     }, 3000)}); 
+  </script>
+  
+  <script>
+    function updateSVGForMobile() {
+      const svg = document.getElementById('customSVG');
+      const g = document.getElementById('svgPathGroup');
+      const img = document.getElementById("svgPhoto");
+      if (window.innerWidth <= 768) {
+        console.log("mobile view")
+        svg.setAttribute('viewBox', '0 0 1440 850'); // Smaller height viewBox
+        g.setAttribute('transform', 'scale(1, -2)'); // Less vertical flip
+        img.setAttribute("width", "2000");
+         img.setAttribute("height", "800");
+    img.setAttribute("x", "-19%");
+    img.setAttribute("y", "11%");
+      } else {
+        svg.setAttribute('viewBox', '0 0 1440 687');
+        g.setAttribute('transform', 'scale(1, -1)');
+      }
+  
+
+
+    }
+    window.addEventListener('load', updateSVGForMobile);
+    window.addEventListener('resize', updateSVGForMobile);
   </script></body>
 </html>
