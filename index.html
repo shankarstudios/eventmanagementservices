@@ -108,7 +108,7 @@ section{
   align-items: center;
   background: white;
   overflow: hidden;
-  padding:30px;
+  padding:10px;
   
   
 }
@@ -187,6 +187,60 @@ section{
   width: 100%;
   display: block;
 }
+
+.contact-us-section {
+    background-color: #f5f5f5;
+    padding: 60px 20px;
+    text-align: center;
+  }
+  .contact-us-container {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .contact-us-container h2 {
+    font-size: 2.2rem;
+    color: #944547;
+    margin-bottom: 10px;
+  }
+  .contact-us-container p {
+    color: #333;
+    margin-bottom: 40px;
+    font-size: 1rem;
+  }
+  .contact-info {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .info-box {
+    flex: 1 1 130px;
+    background-color: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+  .info-box h3,h2 {
+  color: #944547;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+  line-height: 1.4;
+}
+.info-box p {
+  margin: 0;
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.5;
+  margin-top: 5px;
+}
+  .info-box a {
+    color: #555;
+    text-decoration: none;
+  }
+  .info-box a:hover {
+    text-decoration: underline;
+  }
+  
 @media (max-width: 768px) {
 
   
@@ -241,6 +295,7 @@ section{
   }
   .slider {
     height: 400px;
+    
   }
 
   .slide-item
@@ -279,6 +334,7 @@ section{
   align-items: center;
 
   padding:0px;
+  
  
   
   width: 100%;
@@ -314,19 +370,31 @@ section{
     
     
   }
-  custom-svg{
+  .custom-svg{
    width:100%;
 height:50px;
     display:block;
     margin:0;
     padding:0;
   }
+  .contact-info {
+      flex-direction: column;
+      align-items: center;
+    }
+    .info-box {
+      width: 100%;
+      max-width: 400px;
+      height:10px;
+    }
+
+    
+  
 }
   </style>
 </head>
 <body>
   <header class="header">
-    <img src="eventlogo.png" alt="Logo" class="logo" width="100" height="130">
+    <img src="eventlogo.png" alt="Logo" class="logo" width="120" height="150">
     <div class="nav-toggle" onclick="toggleSidebar()">&#9776;</div>
     <nav class="nav">
       <a href="home.html" class="active">Home</a>
@@ -369,7 +437,30 @@ height:50px;
     <image id="svgPhoto" x="15%" y="25%" width="1000" height="400" href="photo1.jpg" />
   </svg>
 </div>
-  </div>  <footer class="site-footer">
+  </div> 
+
+  <section class="contact-us-section">
+    <div class="contact-us-container">
+      <h2>Contact Us</h2>
+      <p>We’re here to assist you.</p>
+      <div class="contact-info">
+        <div class="info-box">
+          <h3>Phone</h3>
+          <p><a href="tel:+911234567890">+91 63600 33974</a></p>
+        </div>
+        <div class="info-box">
+          <h3>Email</h3>
+          <p><a href="mailto:contact@example.com">shankarstudios21@gmail.com</a></p>
+        </div>
+        <div class="info-box">
+          <h3>Location</h3>
+          <p>Gajendragada,<br> Karnataka, India</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <footer class="site-footer">
     <p>&copy; 2025 suraj studios private limited. All rights reserved.</p>
   </footer>  
   
