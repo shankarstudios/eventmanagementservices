@@ -436,7 +436,75 @@ height:50px;
   </div>
 
   
-  
+  <script>
+
+
+    const slides = document.getElementById('slides');
+    const slideCount = slides.children.length;
+    const indicators = document.getElementById('indicators');
+    let index = 0;
+    let startX = 0;
+    let isDragging = false;
+    for (let i = 0; i < slideCount; i++) {
+      const dot = document.createElement('span');
+      dot.classList.add('dot');
+      if (i === 0) dot.classList.add('active');
+      dot.addEventListener('click', () => {
+        index = i;
+        updateSlide();
+      });
+      indicators.appendChild(dot);
+    }
+    const updateSlide = () => {
+      slides.style.transform = `translateX(-${index * 100}%)`;
+      document.querySelectorAll('.dot').forEach((dot, i) => {
+        dot.classList.toggle('active', i === index);
+      });
+    };
+    document.getElementById('next').onclick = () => {
+      index = (index + 1) % slideCount;
+      updateSlide();
+    };
+    document.getElementById('prev').onclick = () => {
+      index = (index - 1 + slideCount) % slideCount;
+      updateSlide();
+    };
+    let autoplay = setInterval(() => {
+      index = (index + 1) % slideCount;
+      updateSlide();
+    }, 5000);
+    const slider = document.getElementById('slider');
+    slider.addEventListener('mouseenter', () => clearInterval(autoplay));
+    slider.addEventListener('mouseleave', () => {
+      autoplay = setInterval(() => {
+        index = (index + 1) % slideCount;
+        updateSlide();
+      }, 5000);
+    });
+    slider.addEventListener('touchstart', (e) => {
+      startX = e.touches[0].clientX;
+      isDragging = true;
+    });
+    slider.addEventListener('touchmove', (e) => {
+      if (!isDragging) return;
+      let diffX = e.touches[0].clientX - startX;
+      if (diffX > 50) {
+        index = (index - 1 + slideCount) % slideCount;
+        updateSlide();
+        isDragging = false;
+      } else if (diffX < -50) {
+        index = (index + 1) % slideCount;
+        updateSlide();
+        isDragging = false;
+      }
+    });
+    slider.addEventListener('touchend', () => {
+      isDragging = false;
+    });
+    function toggleSidebar() {
+      document.getElementById('sidebar').classList.toggle('open');
+    }
+  </script>
   
   
   
