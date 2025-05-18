@@ -198,7 +198,7 @@ section{
     margin: 0 auto;
   }
   .contact-us-container h2 {
-    font-size: 2rem;
+    font-size: 2.2rem;
     color: #944547;
     margin-bottom: 10px;
   }
@@ -251,7 +251,7 @@ section{
   background-color: #f9f9f9;
 }
 .coming-soon-wrapper h1 {
-  font-size: 2rem;
+  font-size: 2.5rem;
   color: #944547;
   margin-bottom: 10px;
 }
@@ -259,6 +259,72 @@ section{
   font-size: 1.2rem;
   color: #666;
 }
+
+.services-section {
+  padding: 60px 20px;
+  background: #f8f9fa;
+  text-align: center;
+  padding-top:300px;
+}
+.services-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #333;
+}
+.services-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.service-card {
+  width: 90%;
+  max-width: 400px;
+  height: 350px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.service-card:hover {
+  transform: translateY(-5px);
+}
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit:cover;
+  display:block;
+}
+
+card-image{
+  height:75%;
+  overflow:hidden;
+}
+.card-content {
+  height: 25%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 15px;
+
+}
+.card-content h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #333;
+  text-align: center;
+}
+
+
+
+
+
+
+
 @media (max-width: 768px) {
 
   
@@ -283,9 +349,9 @@ section{
     width: 250px;
     height: 100%;
     background: #fff;
-    box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+    box-shadow: -2px 0 80px rgba(0,0,0,0.1);
     transition: right 0.3s ease;
-    padding-top: 125px;
+    padding-top: 50px;
     z-index: 2000;
   }
   .sidebar.open {
@@ -413,28 +479,212 @@ height:50px;
 </head>
 <body>
   <header class="header">
-    <img src="eventlogo.png" alt="Logo" class="logo" width="120" height="125">
+    <img src="eventlogo.png" alt="Logo" class="logo" width="120" height="150">
     <div class="nav-toggle" onclick="toggleSidebar()">&#9776;</div>
     <nav class="nav">
-     <a href="home.html" class="active">Home</a>
+      <a href="home.html" class="active">Home</a>
       <a href="about.html">About</a>
       <a href="services.html">Services</a>
-     
+      
     </nav>
     <div class="sidebar" id="sidebar">
       <div class="close-btn" onclick="toggleSidebar()">&times;</div>
       <a href="home.html" class="active">Home</a>
       <a href="about.html">About</a>
       <a href="services.html">Services</a>
-
+     
     </div>
   </header>  
 
-  <div class="coming-soon-wrapper">
-    <h1>Coming Soon</h1>
-    <p>This page is under construction. Please check back later!</p>
-  </div>
-<script>
+  <section class="services-section">
+   
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="card-image">
+          <img src="service1.jpg" alt="Service 1">
+        </div>
+        <div class="card-content">
+          <h3>Catering</h3>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="card-image">
+          <img src="service2.jpg" alt="Service 2">
+        </div>
+        <div class="card-content">
+          <h3>Decor</h3>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="card-image">
+          <img src="service3.jpg" alt="Service 3">
+        </div>
+        <div class="card-content">
+          <h3>Videography and photography</h3>
+        </div>
+
+        
+
+      
+      
+      </div>
+      <div class="service-card">
+        <div class="card-image">
+          <img src="service4.jpg" alt="Service 3">
+        </div>
+        <div class="card-content">
+          <h3>Beautician</h3>
+        </div>
+
+        
+
+      
+      
+      </div>
+      <div class="service-card">
+        <div class="card-image">
+          <img src="service5.jpg" alt="Service 3">
+        </div>
+        <div class="card-content">
+          <h3>Costume  designing</h3>
+        </div>
+
+        
+
+      
+      
+      </div>
+      <div class="service-card">
+        <div class="card-image">
+          <img src="service6.jpg" alt="Service 3">
+        </div>
+        <div class="card-content">
+          <h3>Rental costumes</h3>
+        </div>
+
+        
+
+      
+      
+      </div>
+      <div class="service-card">
+        <div class="card-image">
+          <img src="service7.jpg" alt="Service 3">
+        </div>
+        <div class="card-content">
+          <h3>Costume advisor</h3>
+        </div>
+
+        
+
+      
+      
+      
+
+      
+      
+      </div>
+      <div class="service-card">
+        <div class="card-image">
+          <img src="service8.jpg" alt="Service 3">
+        </div>
+        <div class="card-content">
+          <h3>Sangeeth events</h3>
+        </div>
+
+        
+
+      
+      
+      </div>
+      <div class="service-card">
+        <div class="card-image">
+          <img src="service9.jpg" alt="Service 3">
+        </div>
+        <div class="card-content">
+          <h3>Anchoring</h3>
+        </div>
+
+        
+
+      
+      
+      </div>
+      <div class="service-card">
+        <div class="card-image">
+          <img src="service10.jpg" alt="Service 3">
+        </div>
+        <div class="card-content">
+          <h3>Carnival events</h3>
+        </div>
+
+        
+
+      
+      
+      </div>
+      <div class="service-card">
+        <div class="card-image">
+          <img src="service11.jpg" alt="Service 3">
+        </div>
+        <div class="card-content">
+          <h3>Dancing and singing</h3>
+        </div>
+
+        
+      </div>
+      <div class="service-card">
+        <div class="card-image">
+          <img src="service12.jpg" alt="Service 3">
+        </div>
+        <div class="card-content">
+          <h3>Return gifts</h3>
+        </div>
+
+        
+
+      
+      
+      </div>
+      <div class="service-card">
+        <div class="card-image">
+          <img src="service13.jpg" alt="Service 3">
+        </div>
+        <div class="card-content">
+          <h3>Presentations</h3>
+        </div>
+
+        
+      
+      
+      </div>
+      <!-- Add more cards as needed -->
+    </div>
+  </section>
+
+  <section class="contact-us-section">
+    <div class="contact-us-container">
+      <h2>Contact Us</h2>
+      <p>We’re here to assist you.</p>
+      <div class="contact-info">
+        <div class="info-box">
+          <h3>Phone</h3>
+          <p><a href="tel:+916360033974">+91 63600 33974</a></p>
+        </div>
+        <div class="info-box">
+          <h3>Email</h3>
+          <p><a href="mailto:surajstudios05@gmail.com">surajstudios05@gmail.com</a></p>
+        </div>
+        <div class="info-box">
+          <h3>Location</h3>
+          <p>Karnatake - Kerala - AndraPradesh - TamilNadu</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <script>
 
 
     const slides = document.getElementById('slides');
@@ -503,8 +753,6 @@ height:50px;
       document.getElementById('sidebar').classList.toggle('open');
     }
   </script>
-  
-  
   
   
   
