@@ -240,25 +240,7 @@ section{
   .info-box a:hover {
     text-decoration: underline;
   }
-  .coming-soon-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 80vh;
-  text-align: center;
-  padding: 20px;
-  background-color: #f9f9f9;
-}
-.coming-soon-wrapper h1 {
-  font-size: 2rem;
-  color: #944547;
-  margin-bottom: 10px;
-}
-.coming-soon-wrapper p {
-  font-size: 1.2rem;
-  color: #666;
-}
+  
 @media (max-width: 768px) {
 
   
@@ -404,7 +386,6 @@ height:50px;
       max-width: 400px;
       height:10px;
     }
-    
 
     
   
@@ -416,25 +397,68 @@ height:50px;
     <img src="eventlogo.png" alt="Logo" class="logo" width="120" height="125">
     <div class="nav-toggle" onclick="toggleSidebar()">&#9776;</div>
     <nav class="nav">
-     <a href="home.html" class="active">Home</a>
+      <a href="home.html" class="active">Home</a>
       <a href="about.html">About</a>
       <a href="services.html">Services</a>
-     
+      <a href="contact.html">Contact</a>
     </nav>
     <div class="sidebar" id="sidebar">
       <div class="close-btn" onclick="toggleSidebar()">&times;</div>
       <a href="home.html" class="active">Home</a>
       <a href="about.html">About</a>
       <a href="services.html">Services</a>
-     
+      <a href="contact.html">Contact</a>
     </div>
-  </header>  
+  </header>  <div class="slider-wrapper">
+    <div class="slider" id="slider">
+      <div class="slides" id="slides">
+        <div class="slide-item">
+          <img src="aboutimage.png" />
+        </div>
+        
+        
+        
+      </div>
+</div>
 
-  <div class="coming-soon-wrapper">
-    <h1>Coming Soon</h1>
-    <p>This page is under construction. Please check back later!</p>
-  </div>
+<div class="svg-divider">
+  <svg id="customSVG" class="custom-svg" xmlns="http://www.w3.org/2000/svg" width="100%" height="auto" viewBox="0 0 1440 687" fill="none" style="display:block">
+    <!-- Flip only the curve -->
+    <g id="svgPathGroup" class="svgPathGroup" transform="scale(1, -1)" transform-origin="center" >
+      <path d="M0 0H1440V683.5C1440 683.5 1269 608.5 1080 650C891 691.5 708.5 658.5 625.5 639C542.5 619.5 420 625 266.5 661.5C113 698 0 683.5 0 683.5V0Z" fill="#944547"/>
+    </g>
 
+  </svg>
+</div>
+  </div> 
+
+  <section class="contact-us-section">
+    <div class="contact-us-container">
+      <h2>Contact Us</h2>
+      <p>We’re here to assist you.</p>
+      <div class="contact-info">
+        <div class="info-box">
+          <h3>Phone</h3>
+          <p><a href="tel:+916360033974">+91 63600 33974</a></p>
+        </div>
+        <div class="info-box">
+          <h3>Email</h3>
+          <p><a href="mailto:surajstudios05@gmail.com">surajstudios05@gmail.com</a></p>
+        </div>
+        <div class="info-box">
+          <h3>Location</h3>
+          <p>Karnatake - Kerala - AndraPradesh - TamilNadu</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <footer class="site-footer">
+    <p>&copy; 2025 suraj studios private limited. All rights reserved.</p>
+  </footer>  
+  
+  
+  
   
   <script>
 
@@ -506,8 +530,39 @@ height:50px;
     }
   </script>
   
+  <script>
+    document.addEventListener("DOMContentLoaded",function(){
+    const photos = ["photo1.jpg", "photo2.jpg", "photo3.jpg", "photo4.jpg", "photo5.jpg"];
+    let index1 = 0;
+    const svgImage = document.getElementById("svgPhoto");
+    setInterval(() => {
+      index1 = (index1 + 1) % photos.length;
+      svgImage.setAttribute("href", photos[index1]);
+    }, 3000)}); 
+  </script>
   
+  <script>
+    function updateSVGForMobile() {
+      const svg = document.getElementById('customSVG');
+      const g = document.getElementById('svgPathGroup');
+      const img = document.getElementById("svgPhoto");
+      if (window.innerWidth <= 768) {
+        console.log("mobile view")
+        svg.setAttribute('viewBox', '0 0 1440 850'); // Smaller height viewBox
+        g.setAttribute('transform', 'scale(1, -2)'); // Less vertical flip
+        img.setAttribute("width", "2000");
+         img.setAttribute("height", "800");
+    img.setAttribute("x", "-19%");
+    img.setAttribute("y", "11%");
+      } else {
+        svg.setAttribute('viewBox', '0 0 1440 687');
+        g.setAttribute('transform', 'scale(1, -1)');
+      }
   
-  
-  </body>
+
+
+    }
+    window.addEventListener('load', updateSVGForMobile);
+    window.addEventListener('resize', updateSVGForMobile);
+  </script></body>
 </html>
